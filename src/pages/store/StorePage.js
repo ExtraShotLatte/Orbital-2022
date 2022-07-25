@@ -85,14 +85,6 @@ function StorePage(props) {
             }
           />
         ))}
-        <ItemCard
-          title="Not in DB Placeholder"
-          desc="This placeholder is permenantly here"
-          imgUrl={
-            "https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png"
-          }
-          price="999999.99"
-        />
       </Grid>
     </Layout>
   );
