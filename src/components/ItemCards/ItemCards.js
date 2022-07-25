@@ -97,15 +97,20 @@ export default function MediaCard(props) {
           </span>
         </CardContent>
         <CardActions>
-          <Button
-            variant="outlined"
-            size="small"
-            onClick={() => {
-              sendOwnerEmail(props.oid);
-            }}
-          >
-            Request
-          </Button>
+          {props.uid === props.oid ? (
+            <p></p>
+          ) : (
+            <Button
+              variant="outlined"
+              size="small"
+              onClick={() => {
+                sendOwnerEmail(props.oid);
+              }}
+            >
+              Request
+            </Button>
+          )}
+
           <ViewItem props={props} />
         </CardActions>
       </Card>

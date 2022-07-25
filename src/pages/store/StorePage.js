@@ -7,6 +7,7 @@ import styles from "./StorePage.module.css";
 import { useState, useEffect } from "react";
 import { getItemInfo, queryItems } from "../../hooks/useDB.js";
 import { getImageURL } from "../../hooks/useStorage";
+import { useAuth } from "../../hooks/useAuth.js";
 
 function StorePage(props) {
   const [itemsList, setItemsList] = useState([]);
@@ -15,6 +16,7 @@ function StorePage(props) {
   const location = useLocation();
   const selectedComm = location.state.commId;
   const selectedCommName = location.state.name;
+  const { user } = useAuth();
 
   const addItem = (iid) => {
     let curr = itemsList;
@@ -77,6 +79,7 @@ function StorePage(props) {
             price={elem[1].itemPrice}
             oid={elem[1].ownerID}
             key={elem[0]}
+            uid={user.uid}
             imgUrl={
               //"https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png"
               elem[2]
