@@ -83,13 +83,6 @@ function CommunityPage(props) {
         ) : (
           <div>Loading!</div>
         )}
-        <CommCard
-          title="Non-DB Placeholder"
-          desc="This placeholder is permenantly here"
-          imgUrl={
-            "https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png"
-          }
-        />
       </Grid>
     </Layout>
   );
