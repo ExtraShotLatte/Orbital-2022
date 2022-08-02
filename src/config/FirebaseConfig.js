@@ -1,16 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { useEffect } from "react";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA51xTa_HDa6q1gUUygM6jbChTCBRn8idM",
-  authDomain: "orbital-2022-95df4.firebaseapp.com",
-  projectId: "orbital-2022-95df4",
-  storageBucket: "orbital-2022-95df4.appspot.com",
-  messagingSenderId: "461288548077",
-  appId: "1:461288548077:web:84d86d9266a8cc1d958ee4",
-  measurementId: "G-T3LN0X7G8E",
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_IREBASE_MEASUREMENT_ID,
 };
+
+console.log(process.env);
 
 export const app = initializeApp(firebaseConfig);
 
